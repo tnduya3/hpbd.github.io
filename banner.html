@@ -52,11 +52,10 @@
           <div class="date__of__birth">
             <span></span>
           </div>
-          <button id="btn__letter" class="btn">Open Letter <i class="fa-solid fa-heart"></i></button>
         </div>
         <div class="right">
           <div class="box__account">
-            <div class="image">
+            <div class="image" id="profile">
               <img
                 src="./images/2908.png"
                 alt=""
@@ -185,7 +184,7 @@
     });
 
     // Add event listener for the letter button
-    document.getElementById('btn__letter').addEventListener('click', function() {
+    document.getElementById('profile').addEventListener('click', function() {
         document.querySelector('.box__letter').style.display = 'flex';
         document.querySelector('.letter__border').style.display = 'block';
         // Add animation classes
