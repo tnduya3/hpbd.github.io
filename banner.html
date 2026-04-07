@@ -178,10 +178,10 @@
        
        document.addEventListener("DOMContentLoaded", function() {
         // Check if the page has been reloaded
-        if (performance.navigation.type === 1) {
-            // Redirect to the new URL
-            window.location.href = "/";
-        }
+        // Removed redirect to "/" to fix GitHub Pages path issues
+        // if (performance.navigation.type === 1) {
+        //     window.location.href = "/";
+        // }
     });
   </script>
 </html>
