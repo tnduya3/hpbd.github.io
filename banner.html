@@ -188,6 +188,11 @@
     document.getElementById('btn__letter').addEventListener('click', function() {
         document.querySelector('.box__letter').style.display = 'flex';
         document.querySelector('.letter__border').style.display = 'block';
+        // Add animation classes
+        document.getElementById('heart__letter').classList.add('animationOp');
+        document.querySelector('.love__img').classList.add('animationOp');
+        document.getElementById('mewmew').classList.add('animationOp');
+        document.querySelectorAll('.heart').forEach(heart => heart.classList.add('animation'));
         // Start typing title
         intervalTitle = setInterval(function(){
             if(currentIndexTitle < charArrTitle.length){
@@ -212,6 +217,11 @@
     document.querySelector('.close').addEventListener('click', function() {
         document.querySelector('.box__letter').style.display = 'none';
         document.querySelector('.letter__border').style.display = 'none';
+        // Remove animation classes
+        document.getElementById('heart__letter').classList.remove('animationOp');
+        document.querySelector('.love__img').classList.remove('animationOp');
+        document.getElementById('mewmew').classList.remove('animationOp');
+        document.querySelectorAll('.heart').forEach(heart => heart.classList.remove('animation'));
         // Reset for replay
         currentIndexTitle = 0;
         currentIndexLetter = 0;
