@@ -52,7 +52,7 @@
           <div class="date__of__birth">
             <span></span>
           </div>
-         
+          <button id="btn__letter" class="btn">Open Letter <i class="fa-solid fa-heart"></i></button>
         </div>
         <div class="right">
           <div class="box__account">
@@ -182,6 +182,41 @@
         // if (performance.navigation.type === 1) {
         //     window.location.href = "/";
         // }
+    });
+
+    // Add event listener for the letter button
+    document.getElementById('btn__letter').addEventListener('click', function() {
+        document.querySelector('.box__letter').style.display = 'flex';
+        document.querySelector('.letter__border').style.display = 'block';
+        // Start typing title
+        intervalTitle = setInterval(function(){
+            if(currentIndexTitle < charArrTitle.length){
+                document.querySelector('.title__letter').textContent += charArrTitle[currentIndexTitle];
+                currentIndexTitle++;
+            } else {
+                clearInterval(intervalTitle);
+            }
+        }, 100);
+        // Start typing content
+        intervalContent = setInterval(function(){
+            if(currentIndexLetter < charArrDateLetter.length){
+                document.querySelector('.text__letter p').textContent += charArrDateLetter[currentIndexLetter];
+                currentIndexLetter++;
+            } else {
+                clearInterval(intervalContent);
+            }
+        }, 50);
+    });
+
+    // Close button
+    document.querySelector('.close').addEventListener('click', function() {
+        document.querySelector('.box__letter').style.display = 'none';
+        document.querySelector('.letter__border').style.display = 'none';
+        // Reset for replay
+        currentIndexTitle = 0;
+        currentIndexLetter = 0;
+        document.querySelector('.title__letter').textContent = '';
+        document.querySelector('.text__letter p').textContent = '';
     });
   </script>
 </html>
